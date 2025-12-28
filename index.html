@@ -10,7 +10,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-    .sub-header {
+  /* Estilos para a Seção de Recursos */
+.resources-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid var(--phb-red);
+  border-radius: 8px;
+}
+
+.resource-item {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resource-item h3 {
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--phb-red);
+}
+
+.resource-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.resource-inputs input {
+  width: 50px;
+  font-size: 18px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.resource-divider {
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+}
+
+.spell-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  width: 100%;
+  grid-column: 1 / -1; /* Ocupa a largura toda */
+  margin-top: 10px;
+}
+
+.spell-slot-box {
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.spell-slot-box label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.sub-header {
   font-family: 'Cinzel', serif;
   font-size: 11px;
   color: #555;
@@ -439,7 +515,7 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
 
   <div class="main-grid">
     <div class="scores-col">
-      <div class="ability-score"><h3>STR</h3><div class="mod-box">-1</div><div class="score-oval">8</div></div>
+      <div class="ability-score"><h3>STR</h3><div class="mod-box">-1</div><div class="score-ovagitl">8</div></div>
       <div class="ability-score"><h3>DEX</h3><div class="mod-box">+2</div><div class="score-oval">14</div></div>
       <div class="ability-score"><h3>CON</h3><div class="mod-box">+3</div><div class="score-oval">16</div></div>
       <div class="ability-score"><h3>INT</h3><div class="mod-box">+0</div><div class="score-oval">10</div></div>
@@ -534,7 +610,8 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
           <button class="interactive-btn" onclick="openText(this)">Quickened Spell<div class="hidden-content"><strong>Custo:</strong> 2 Pontos de Feitiçaria<br><strong>Efeito:</strong> Você pode mudar o tempo de conjuração de uma magia que tenha tempo de 1 ação para 1 ação bônus.</div></button>
           <button class="interactive-btn" onclick="openText(this)">Twinned Spell<div class="hidden-content"><strong>Custo:</strong> Pontos igual ao nível da magia<br><strong>Efeito:</strong> Ao conjurar uma magia que alveja apenas uma criatura e não tem alcance de "pessoal", você pode alvejar uma segunda criatura no alcance.</div></button>
           <button class="interactive-btn" onclick="openText(this)">Empowered Spell<div class="hidden-content"><strong>Custo:</strong> 1 Ponto de Feitiçaria<br><strong>Efeito:</strong> Ao rolar o dano de uma magia, você pode escolher até 5 dados (seu mod. de CHA) para rolar novamente, devendo usar os novos resultados.</div></button>
-        
+          <button class="interactive-btn" onclick="openText(this)">Subtle Spell<div class="hidden-content"><strong>Custo:</strong> 1 Ponto de Feitiçaria<br><strong>Efeito:</strong>  Ao conjurar uma magia, você pode gastar 1 ponto de feitiçaria para conjurá-la sem quaisquer componentes somáticos ou verbais.</div></button>
+      
           <div class="sub-header">Talentos (Feats)</div>
           <button class="interactive-btn" onclick="openText(this)">Hexblade Curse<div class="hidden-content">
             A partir do 1º nível, você adquire a habilidade de lançar uma maldição nefasta em alguém. Como uma ação bônus, escolha uma criatura que você possa ver a até 9 metros de você. O alvo fica amaldiçoado por 1 minuto. A maldição termina mais cedo se o alvo morrer, você morrer ou ficar incapacitado. Até o fim da maldição, você recebe os seguintes benefícios:  
@@ -698,7 +775,7 @@ Weight: 4
       <h3>3º Nível</h3>
       <button class="interactive-btn" onclick="openText(this)">Counterspell<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 reação<br><strong>Alcance:</strong> 18 metros<br><br>Você tenta interromper uma criatura no processo de conjurar uma magia. Se a magia for de 3º nível ou menor, ela falha. Se for maior, você faz um teste de atributo (CHA) contra CD 10 + nível da magia.</div></button>
       <button class="interactive-btn" onclick="openText(this)">Hypnotic Pattern<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 36 metros (Conc.)<br><br>Você cria um padrão de cores flutuantes em um cubo de 9m. Criaturas que falharem na salvaguarda de Sabedoria ficam <strong>Incapacitadas</strong> e com deslocamento 0 enquanto durar a magia ou até sofrerem dano.</div></button>
-      <button class="interactive-btn" onclick="openText(this)">Hunger of Hadar<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 45 metros (Conc.)<br><br>Uma esfera de 6m preenchida com escuridão mágica e ruídos aterrorizantes surge. Criaturas que começam o turno na área sofrem 2d6 de dano gélido. Criaturas que terminam o turno lá sofrem 2d6 de dano ácido (Destreza evita). A área é terreno difícil.</div></button>
+      <button class="interactive-btn" onclick="openText(this)">Wall of fire<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 45 metros (Conc.)<br><br>Você cria uma parede de fogo em uma superfície sólida dentro do alcance. Você pode fazer a parede com até 60 pés de comprimento, 20 pés de altura e 1 pé de espessura, ou uma parede em anel com até 20 pés de diâmetro, 20 pés de altura e 1 pé de espessura. A parede é opaca e dura pela duração. Quando a parede aparece, cada criatura em sua área deve fazer um teste de resistência de Destreza. Em um teste falho, uma criatura sofre 5d8 de dano de fogo, ou metade desse dano em um teste bem-sucedido. Um lado da parede, selecionado por você quando conjura este feitiço, causa 5d8 de dano de fogo a cada criatura que termina seu turno a até 10 pés desse lado ou dentro da parede. Uma criatura sofre o mesmo dano quando entra na parede pela primeira vez em um turno ou termina seu turno lá. O outro lado da parede não causa dano. </div></button>
       <button class="interactive-btn" onclick="openText(this)">Sending<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> Ilimitado (Mesmo plano)<br><br>Você envia uma mensagem mental de até 25 palavras para uma criatura que conhece. Ela reconhece sua voz e pode responder imediatamente. Funciona mesmo entre planos (5% de falha).</div></button>
       <button class="interactive-btn" onclick="openText(this)">Haste<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 9 metros (Conc.)<br><br>A criatura ganha o dobro de deslocamento, +2 na CA, vantagem em testes de Destreza e uma ação extra (Ataque, Desengajar, Esconder ou Usar Objeto). Quando a magia acaba, o alvo perde um turno.</div></button>
     </div>
@@ -724,8 +801,81 @@ Weight: 4
       <button class="interactive-btn" onclick="openText(this)">Mass Suggestion<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 18 metros<br><br>Você sugere um curso de ação a até 12 criaturas. Se a sugestão for razoável, elas devem passar num teste de Sabedoria ou seguirão a instrução por até 24 horas. Não exige concentração.</div></button>
     </div>
   </div>
-</section>
+<section>
+  <h2 style="margin-top: 40px;">Recursos de Classe</h2>
+<div class="resources-container">
+  
+  <div class="resource-item">
+    <h3>Dados de Vida (Hit Dice)</h3>
+    <div class="resource-inputs">
+      <input type="text" value="15" title="Atuais">
+      <span class="resource-divider">/</span>
+      <input type="text" value="12d6/3d8" title="Total" style="width: 80px; font-size: 14px;">
+    </div>
+  </div>
 
+  <div class="resource-item">
+    <h3>Sorcery Points</h3>
+    <div class="resource-inputs">
+      <input type="number" value="12" title="Atuais">
+      <span class="resource-divider">/</span>
+      <input type="number" value="12" title="Total">
+    </div>
+  </div>
+
+  <div class="spell-slots-grid">
+    <div class="spell-slot-box">
+      <label>1º Nível</label>
+      <div class="resource-inputs">
+        <input type="number" value="4"> / <input type="number" value="4">
+      </div>
+    </div>
+    
+    <div class="spell-slot-box">
+      <label>2º Nível</label>
+      <div class="resource-inputs">
+        <input type="number" value="3"> / <input type="number" value="3">
+      </div>
+    </div>
+
+    <div class="spell-slot-box">
+      <label>3º Nível</label>
+      <div class="resource-inputs">
+        <input type="number" value="3"> / <input type="number" value="3">
+      </div>
+    </div>
+
+    <div class="spell-slot-box">
+      <label>4º Nível</label>
+      <div class="resource-inputs">
+        <input type="number" value="3"> / <input type="number" value="3">
+      </div>
+    </div>
+
+    <div class="spell-slot-box">
+      <label>5º Nível</label>
+      <div class="resource-inputs">
+        <input type="number" value="2"> / <input type="number" value="2">
+      </div>
+    </div>
+
+    <div class="spell-slot-box">
+      <label>6º Nível</label>
+      <div class="resource-inputs">
+        <input type="number" value="1"> / <input type="number" value="1">
+      </div>
+    </div>
+
+    <div class="spell-slot-box" style="border-color: var(--phb-red);">
+      <label>Pact Magic (2º Lvl)</label>
+      <div class="resource-inputs">
+        <input type="number" value="2"> / <input type="number" value="2">
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
 <section class="sheet-page">
   <h2 style="font-size: 28px; margin-bottom: 30px;">História do Personagem</h2>
   <div class="bg-text">
