@@ -428,11 +428,12 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
     </div>
 
     <div class="char-info">
-      <div class="info-box"><strong>Classe/Nível</strong><span>Sorcerer 12 / Warlock 3</span></div>
-      <div class="info-box"><strong>Raça</strong><span>Meio-Elfo</span></div>
+      <div class="info-box"><strong>Class/Level</strong><span>Sorcerer 12 / Warlock 3</span></div>
+      <div class="info-box"><strong>Race</strong><span>Half-Elf</span></div>
+      <div class="info-box"><strong>Idade</strong><span>63</span></div>
       <div class="info-box"><strong>Background</strong><span>Haunted One</span></div>
-      <div class="info-box"><strong>Alinhamento</strong><span>Caótico Bom</span></div>
-      <div class="info-box"><strong>Jogador</strong><span>Maio</span></div>
+      <div class="info-box"><strong>Alignment</strong><span>Chaotic Good</span></div>
+      <div class="info-box"><strong>Player</strong><span>Maio</span></div>
     </div>
   </div>
 
@@ -460,7 +461,7 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
       </div>
 
       <div class="skill-box">
-        <h2>Perícias</h2>
+        <h2>Skills</h2>
         <div class="skill-list">
           <div class="skill-row"><input type="checkbox" disabled> <span class="skill-bonus">+2</span> <span class="skill-name">Acrobatics</span> <span class="skill-attr">(DEX)</span></div>
           <div class="skill-row"><input type="checkbox" disabled> <span class="skill-bonus">+0</span> <span class="skill-name">Animal Handling</span> <span class="skill-attr">(WIS)</span></div>
@@ -485,16 +486,22 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
 
     <div class="combat-col">
       <div class="combat-stats">
-        <div class="stat-block ac">
-          <h4>CA</h4>
+                <div class="stat-block ac" style="cursor: pointer;" onclick="openText(this)">
+          <span style="display:none">Armor Class</span>
+          <h4>AC</h4>
           <span class="stat-value">22</span>
+          <div class="hidden-content">Scale Mail +15<br>
+            DEX +2<br>
+            Shield +2<br>
+            Staff of Power +2<br>
+            Cloak of Protection +1</div>
         </div>
         <div class="stat-block">
           <h4>Inic.</h4>
           <span class="stat-value">+2</span>
         </div>
         <div class="stat-block">
-          <h4>Desloc.</h4>
+          <h4>Speed.</h4>
           <span class="stat-value">9m</span>
         </div>
         <div class="stat-block">
@@ -514,6 +521,8 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
       
       <div class="skill-box">
         <div class="skill-list">
+          
+          <div><strong>Spell Attack (para acertar):</strong> Roll  +14 </div>
           <div><strong>Percepção Passiva:</strong> 15</div>
           <div><strong>CD Magia:</strong> 20 / 22 (Sorc)</div>
           
@@ -525,24 +534,127 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
           <button class="interactive-btn" onclick="openText(this)">Quickened Spell<div class="hidden-content"><strong>Custo:</strong> 2 Pontos de Feitiçaria<br><strong>Efeito:</strong> Você pode mudar o tempo de conjuração de uma magia que tenha tempo de 1 ação para 1 ação bônus.</div></button>
           <button class="interactive-btn" onclick="openText(this)">Twinned Spell<div class="hidden-content"><strong>Custo:</strong> Pontos igual ao nível da magia<br><strong>Efeito:</strong> Ao conjurar uma magia que alveja apenas uma criatura e não tem alcance de "pessoal", você pode alvejar uma segunda criatura no alcance.</div></button>
           <button class="interactive-btn" onclick="openText(this)">Empowered Spell<div class="hidden-content"><strong>Custo:</strong> 1 Ponto de Feitiçaria<br><strong>Efeito:</strong> Ao rolar o dano de uma magia, você pode escolher até 5 dados (seu mod. de CHA) para rolar novamente, devendo usar os novos resultados.</div></button>
+        
+          <div class="sub-header">Talentos (Feats)</div>
+          <button class="interactive-btn" onclick="openText(this)">Hexblade Curse<div class="hidden-content">
+            A partir do 1º nível, você adquire a habilidade de lançar uma maldição nefasta em alguém. Como uma ação bônus, escolha uma criatura que você possa ver a até 9 metros de você. O alvo fica amaldiçoado por 1 minuto. A maldição termina mais cedo se o alvo morrer, você morrer ou ficar incapacitado. Até o fim da maldição, você recebe os seguintes benefícios:  
+          <ul>
+            <li>Você recebe um bônus nas rolagens de dano contra o alvo amaldiçoado. O bônus é igual ao seu bônus de proficiência.</li>
+            <li>Qualquer rolagem de ataque que você fizer contra o alvo amaldiçoado será um acerto crítico com um resultado de 19 ou 20 no d20.</li>
+            <li>Se o alvo amaldiçoado morrer, você recupera pontos de vida iguais ao seu nível de bruxo + seu modificador de Carisma.</li>
+            <li>Você não pode usar esta habilidade novamente até terminar um descanso curto ou longo.</li>
+          </ul></div></button>
+          <button class="interactive-btn" onclick="openText(this)">War Caster<div class="hidden-content"><strong>Pré-requisito:</strong> Capacidade de conjurar magias.<br><br>Você praticou a execução de magias em meio ao combate, aprendendo técnicas que lhe concedem os seguintes benefícios:
+          <ul>
+            <li>Você tem vantagem em testes de resistência de Constituição para manter sua concentração em uma magia quando sofrer dano.</li>
+            <li>Você pode executar os componentes somáticos de magias mesmo quando estiver empunhando armas ou um escudo em uma ou ambas as mãos.</li>
+            <li>Quando o movimento de uma criatura hostil provocar um ataque de oportunidade para você, você pode usar sua reação para conjurar uma magia na criatura, em vez de realizar o ataque de oportunidade. A magia deve ter tempo de conjuração de 1 ação e deve alvejar apenas a criatura.</li>
+          </ul></div></button>
+          <button class="interactive-btn" onclick="openText(this)">Telepathic<div class="hidden-content">Você desperta a habilidade de conectar mentalmente com outros:
+          <ul>
+            <li>Seu atributo de Carisma foi aumentado em 1 (já aplicado).</li>
+            <li>Você pode falar telepaticamente com qualquer criatura que possa ver a até 18 metros (60 pés) de você. A criatura não precisa compartilhar um idioma com você para entender a mensagem, mas deve entender pelo menos um idioma.</li>
+            <li>Você pode conjurar a magia <em>Detectar Pensamentos</em> (Detect Thoughts) sem gastar espaço de magia ou componentes. Você deve terminar um descanso longo para usá-la desta forma novamente, ou pode usar espaços de magia de 2º nível ou superior.</li>
+          </ul></div></button>
+          <button class="interactive-btn" onclick="openText(this)">ASI +2 CHA<div class="hidden-content"><strong>Ability Score Improvement</strong><br><br>Seu atributo Carisma foi aumentado em +2 pontos.<br>Isso reflete diretamente no seu modificador de Carisma (+5), afetando:
+          <ul>
+             <li>Testes de resistência de Carisma</li>
+             <li>Perícias sociais (Enganação, Intimidação, Atuação, Persuasão)</li>
+             <li>Bônus de ataque de magias</li>
+             <li>Classe de Dificuldade (CD) das suas magias</li>
+             <li>Dano extra do <em>Agonizing Blast</em></li>
+          </ul></div></button>
         </div>
       </div>
     </div>
 
     <div class="bio-col">
-      <h2>Resumo</h2>
+      <h2>Personalidade</h2>
+      
+      <strong>Traços</strong>
       <ul>
-        <li>Criado nas ruas de Avernus entre crianças abandonadas de várias raças</li>
-        <li>Usado como peão por criaturas infernais desde a infância</li>
-        <li>Assombrado por vozes e visões de tentáculos desde que se lembra</li>
-        <li>Poder psíquico inato e inexplicável</li>
-        <li>Justo, solidário aos trabalhadores, avesso a autoridades</li>
+        <li>Observador, irônico quando confrontado com poder ou autoridade</li>
+        <li>Pragmático, mas não cruel</li>
+        <li>Extremamente desconfortável com hierarquias formais</li>
+        <li>Alcoólatra, usa a bebida como escape para aguentar o trabalho</li>
       </ul>
+
+      <strong>Ideais</strong>
+      <ul>
+        <li><strong>Justiça:</strong> Ninguém deveria ser reduzido a uma ferramenta (apesar de ter virado uma)</li>
+        <li><strong>Moral:</strong> Meios justificam os fins, leis podem ser quebradas para promover um bem maior</li>
+      </ul>
+
+      <strong>Vínculos</strong>
+      <ul>
+        <li>Bel (Patrono)</li>
+        <li>Zarathul (Mentor Feiticeiro)</li>
+        <li>Pessoas trabalhadoras e exploradas</li>
+        <li>Qualquer um tentando escapar de um sistema opressor</li>
+      </ul>
+
+      <strong>Defeitos</strong>
+      <ul>
+        <li>Dificuldade em confiar em figuras de poder</li>
+        <li>Pessimista e zomba de tudo</li>
+        <li>Normaliza abusos quando eles vêm “disfarçados de profissionalismo”</li>
+      </ul>
+    </div>
     </div>
   </div> 
 </section>
 
 <section class="sheet-page">
+   <h2 style="margin-top:40px; border-top: 2px solid var(--phb-red); padding-top:20px;">IItems</h2>
+  <div class="items-columns">
+    <div class="item-category">
+      <h3>Very Rare</h3>
+      <button class="interactive-btn" onclick="openText(this)">Staff of Power (Very Rare)<div class="hidden-content"><strong>Requer Sintonização</strong><br>
+    This staff can be wielded as a magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it. While holding it, you gain a +2 bonus to Armor Class, saving throws, and spell attack rolls.
+<br><br>
+The staff has 20 charges for the following properties. The staff regains 2d8 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff retains its +2 bonus to attack and damage roll but loses all other properties. On a 20, the staff regain 1d8 + 2 charges.
+<br><br>
+Power Strike. When you hit with a melee attack using the staff, you can expend 1 charge to deal an extra 1d6 force damage to the target.
+<br><br>
+Spells. While holding this staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spell attack bonus: cone of cold (5 charges), fireball (5th-level version, 5 charges), globe of invulnerability (6 charges), hold monster (5 charges), levitate (2 charges), lightning bolt (5th-level version, 5 charges), magic missile (1 charge), ray of enfeeblement (1 charge), or wall of force (5 charges).
+<br><br>
+Retributive Strike. You can use an action to break the staff over your knee or against a solid surface, performing a retributive strike. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it.
+<br><br>
+You have a 50 percent chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 x the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point of origin, as shown in the following table. On a successful save, a creature takes half as much damage.
+<br><br>
+Distance from Origin — Damage:
+<br><br>
+10 ft. away or closer — 8 x the number of charges in the staff
+<br><br>
+11 to 20 ft. away — 6 x the number of charges in the staff
+<br><br>
+21 to 30 ft. away — 4 x the number of charges in the staff
+<br><br>
+Versatile. This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+<br><br>
+Damage: 1d6 (1d8)
+Damage Type: Bludgeoning
+Properties: Versatile
+Weight: 4
+</div></button>
+    </div>
+    <div class="item-category">
+      <h3>Rare</h3>
+      <button class="interactive-btn" onclick="openText(this)">Bloodwell Vial +2 (Rare)<div class="hidden-content"><strong>Requer Sintonização (Feiticeiro)</strong><br>+2 de bônus em ataques de magia e na CD das magias de Feiticeiro. Uma vez por dia, ao usar Dados de Vida, recupera 5 Pontos de Feitiçaria.</div></button>
+    </div>
+    <div class="item-category">
+      <h3>Uncommon</h3>
+      <button class="interactive-btn" onclick="openText(this)">Cloak of Protection<div class="hidden-content">+1 na CA e nos testes de resistência.</div></button>
+      <button class="interactive-btn" onclick="openText(this)">Scale Mail +1<div class="hidden-content">CA base 15 + Des (máx 2). Desvantagem em Furtividade.</div></button>
+    </div>
+    <div class="item-category">
+      <h3>Common</h3>
+      <button class="interactive-btn" onclick="openText(this)">Shield<div class="hidden-content">+2 AC</div></button>
+      <button class="interactive-btn" onclick="openText(this)">Hat of Disguise<div class="hidden-content">Permite conjurar <em>Disfarçar-se</em> à vontade.</div></button>
+      <button class="interactive-btn" onclick="openText(this)">Clockwork Amulet<div class="hidden-content">Uma vez por dia, pode escolher um 10 fixo no d20 para um ataque.</div></button>
+    </div>
+  </div>
+
   <h2 style="font-size: 24px; margin-bottom: 20px;">Grimório & Equipamento</h2>
   
   <div class="spell-grid">
@@ -562,7 +674,7 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
       <h3>1º Nível</h3>
       <button class="interactive-btn" onclick="openText(this)">Dissonant Whispers<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 18 metros<br><br>Você sussurra uma melodia discordante audível apenas pelo alvo. Ele deve fazer um teste de sabedoria. Se falhar, sofre 3d6 de dano psíquico e deve usar sua reação para fugir de você imediatamente.</div></button>
       <button class="interactive-btn" onclick="openText(this)">Shield<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 reação<br><strong>Alcance:</strong> Pessoal<br><br>Quando você é atingido por um ataque ou alvo da magia Mísseis Mágicos, você cria uma barreira invisível. Você ganha <strong>+5 de CA</strong> (incluindo contra o ataque que ativou a reação) até o início do seu próximo turno.</div></button>
-      <button class="interactive-btn" onclick="openText(this)">Arms of Hadar<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> Pessoal (3m de raio)<br><br>Tentáculos de energia negra brotam de você. Cada criatura na área deve fazer um teste de Força. Em falha, sofre 2d6 de dano necrótico e não pode usar reações até o próximo turno.</div></button>
+      <button class="interactive-btn" onclick="openText(this)">Arms of Hadar<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> Pessoal (3m de raio)<br><br>Tentáculos de energia negra brotam de você. Cada criatura na área deve fazer um teste de Força. Em falha, sofre 2d6 de dano necrótico e não pode usar reações e só podem realizar uma ação ou ação bônus (não ambas).</div></button>
       <button class="interactive-btn" onclick="openText(this)">Silvery Barbs<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 reação<br><strong>Alcance:</strong> 18 metros<br><br>Como reação a uma criatura sendo bem-sucedida num ataque, teste ou salvaguarda, você a força a rolar novamente e usar o menor valor. Então, você escolhe outra criatura (pode ser você) para ter vantagem na próxima rolagem em até 1 minuto.</div></button>
       <button class="interactive-btn" onclick="openText(this)">Absorb Elements<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 reação<br><strong>Alcance:</strong> Pessoal<br><br>Quando você sofre dano elemental (Ácido, Frio, Fogo, Raio ou Trovão), você ganha resistência a esse tipo de dano até o início do seu próximo turno e seu próximo ataque corpo-a-corpo causa 1d6 extra desse tipo.</div></button>
     </div>
@@ -612,65 +724,140 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
       <button class="interactive-btn" onclick="openText(this)">Mass Suggestion<div class="hidden-content"><strong>Tempo de Conjuração:</strong> 1 ação<br><strong>Alcance:</strong> 18 metros<br><br>Você sugere um curso de ação a até 12 criaturas. Se a sugestão for razoável, elas devem passar num teste de Sabedoria ou seguirão a instrução por até 24 horas. Não exige concentração.</div></button>
     </div>
   </div>
-
-  <h2 style="margin-top:40px; border-top: 2px solid var(--phb-red); padding-top:20px;">Itens Mágicos</h2>
-  <div class="items-columns">
-    <div class="item-category">
-      <h3>Muito Raros</h3>
-      <button class="interactive-btn" onclick="openText(this)">Staff of Power (Very Rare)<div class="hidden-content"><strong>Requer Sintonização</strong><br>
-    This staff can be wielded as a magic quarterstaff that grants a +2 bonus to attack and damage rolls made with it. While holding it, you gain a +2 bonus to Armor Class, saving throws, and spell attack rolls.
-<br><br>
-The staff has 20 charges for the following properties. The staff regains 2d8 + 4 expended charges daily at dawn. If you expend the last charge, roll a d20. On a 1, the staff retains its +2 bonus to attack and damage roll but loses all other properties. On a 20, the staff regain 1d8 + 2 charges.
-<br><br>
-Power Strike. When you hit with a melee attack using the staff, you can expend 1 charge to deal an extra 1d6 force damage to the target.
-<br><br>
-Spells. While holding this staff, you can use an action to expend 1 or more of its charges to cast one of the following spells from it, using your spell save DC and spell attack bonus: cone of cold (5 charges), fireball (5th-level version, 5 charges), globe of invulnerability (6 charges), hold monster (5 charges), levitate (2 charges), lightning bolt (5th-level version, 5 charges), magic missile (1 charge), ray of enfeeblement (1 charge), or wall of force (5 charges).
-<br><br>
-Retributive Strike. You can use an action to break the staff over your knee or against a solid surface, performing a retributive strike. The staff is destroyed and releases its remaining magic in an explosion that expands to fill a 30-foot-radius sphere centered on it.
-<br><br>
-You have a 50 percent chance to instantly travel to a random plane of existence, avoiding the explosion. If you fail to avoid the effect, you take force damage equal to 16 x the number of charges in the staff. Every other creature in the area must make a DC 17 Dexterity saving throw. On a failed save, a creature takes an amount of damage based on how far away it is from the point of origin, as shown in the following table. On a successful save, a creature takes half as much damage.
-<br><br>
-Distance from Origin — Damage:
-<br><br>
-10 ft. away or closer — 8 x the number of charges in the staff
-<br><br>
-11 to 20 ft. away — 6 x the number of charges in the staff
-<br><br>
-21 to 30 ft. away — 4 x the number of charges in the staff
-<br><br>
-Versatile. This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
-<br><br>
-Damage: 1d6 (1d8)
-Damage Type: Bludgeoning
-Properties: Versatile
-Weight: 4
-</div></button>
-    </div>
-    <div class="item-category">
-      <h3>Raros</h3>
-      <button class="interactive-btn" onclick="openText(this)">Bloodwell Vial +2 (Rare)<div class="hidden-content"><strong>Requer Sintonização (Feiticeiro)</strong><br>+2 de bônus em ataques de magia e na CD das magias de Feiticeiro. Uma vez por dia, ao usar Dados de Vida, recupera 5 Pontos de Feitiçaria.</div></button>
-    </div>
-    <div class="item-category">
-      <h3>Incomuns</h3>
-      <button class="interactive-btn" onclick="openText(this)">Cloak of Protection<div class="hidden-content">+1 na CA e nos testes de resistência.</div></button>
-      <button class="interactive-btn" onclick="openText(this)">Scale Mail +1<div class="hidden-content">CA base 15 + Des (máx 2). Desvantagem em Furtividade.</div></button>
-    </div>
-    <div class="item-category">
-      <h3>Comuns</h3>
-      <button class="interactive-btn" onclick="openText(this)">Shield<div class="hidden-content">+2 AC</div></button>
-      <button class="interactive-btn" onclick="openText(this)">Hat of Disguise<div class="hidden-content">Permite conjurar <em>Disfarçar-se</em> à vontade.</div></button>
-      <button class="interactive-btn" onclick="openText(this)">Clockwork Amulet<div class="hidden-content">Uma vez por dia, pode escolher um 10 fixo no d20 para um ataque.</div></button>
-    </div>
-  </div>
 </section>
 
 <section class="sheet-page">
   <h2 style="font-size: 28px; margin-bottom: 30px;">História do Personagem</h2>
   <div class="bg-text">
-    <p>Varis nunca conheceu uma família. Desde que tem memória, sobreviveu nas ruas de Avernus, ao lado de outras crianças abandonadas, de raças diversas, todas exploradas como mão de obra descartável por criaturas mais poderosas.</p>
-    <p>Desde cedo, sua mente foi marcada por pesadelos recorrentes: tentáculos, sussurros e vozes que pareciam observá-lo além do véu da realidade. Junto a isso, manifestações espontâneas de magia psíquica surgiam sem explicação.</p>
-    <p>Na adolescência, ao reconhecer outro conjurador com dons semelhantes, Varis tornou-se seu discípulo, buscando compreender a origem de seus poderes. Mais tarde, encontrou um tratado sobre pactos infernais e firmou contrato com Bel, Arquiduque de Avernus, em um acordo corporativo de metas anuais e prestação de serviços.</p>
-    <p>Embora inicialmente burocrático, o pacto tornou-se uma prisão disfarçada, com exigências crescentes. Ainda assim, Varis manteve sua bússola moral: despreza política e autoridade, mas respeita profundamente aqueles que lutam para sobreviver.</p>
+   
+    <section class="background-completo">
+
+  <p>
+    Criado nas ruas de <strong>Avernus</strong>, o personagem nunca conheceu família.
+    Desde que tem memória, sobreviveu entre crianças abandonadas de várias raças,
+    todas usadas como mão de obra descartável por demônios, diabos e outras criaturas infernais.
+  </p>
+
+  <p>
+    Serviços simples, recados perigosos, cobranças, espionagem — sempre como
+    <em>peão substituível</em>.
+  </p>
+
+  <p>
+    Mesmo em meio ao caos, algo nele sempre foi diferente.
+  </p>
+
+  <p>
+    Desde muito jovem, era atormentado por <strong>pesadelos recorrentes</strong>:
+  </p>
+
+  <ul>
+    <li>Tentáculos se contorcendo no vazio</li>
+    <li>Vozes sussurrando em idiomas impossíveis</li>
+    <li>A sensação constante de estar sendo observado por algo antigo e distante</li>
+  </ul>
+
+  <p>
+    Esses horrores não vinham apenas durante o sono — às vezes surgiam como ecos na mente,
+    empurrando pensamentos que não eram seus.
+  </p>
+
+  <p>
+    Além disso, manifestava <strong>magia inata</strong>, instintiva, sem estudo ou pacto.
+    Nunca soube explicar de onde vinha — apenas sabia que sempre esteve ali.
+  </p>
+
+  <p>
+    Na adolescência, durante um de seus serviços em Avernus, reconheceu outro indivíduo
+    com poderes semelhantes aos seus: um <strong>feiticeiro</strong>.
+    Pela primeira vez, viu em alguém um reflexo de si mesmo.
+  </p>
+
+  <p>
+    Aproximou-se, ofereceu seus serviços e, em troca, pediu algo que nunca tivera:
+    <em>respostas</em>.
+    Tornou-se seu discípulo, aprendendo a moldar a magia que brotava de sua mente,
+    embora a origem dela continuasse obscura.
+  </p>
+
+  <p>
+    Anos depois, já servindo a outro feiticeiro, encontrou por acaso um livro de anotações
+    que descrevia pactos infernais.
+    Pactos sempre foram comuns em Avernus — mas uma observação em particular chamou sua atenção:
+  </p>
+
+  <blockquote>
+    “O ritual exige apenas prestação de serviços pontuais.
+    A alma permanece com o conjurador.”
+  </blockquote>
+
+  <p>
+    A promessa de poder sem perda imediata da alma parecia boa demais para ser ignorada.
+  </p>
+
+  <p>
+    Seguiu o ritual.
+  </p>
+
+  <p>
+    A entidade que respondeu foi <strong>Bel, Arquiduque de Avernus</strong>.
+  </p>
+
+  <p>
+    O contrato era surpreendentemente… <em>corporativo</em>.
+    Metas claras, cláusulas de desempenho, prestação de serviços cordiais ou violentos,
+    conforme necessário.
+    Duração de um ano, com renovação anual automática, condicionada ao cumprimento de objetivos.
+    Tudo muito bem redigido.
+  </p>
+
+  <p>
+    O primeiro ano foi simples.
+    Recebeu poder, executou tarefas burocráticas, intermediações,
+    algumas extorsões usando sua magia — nada que já não tivesse feito antes.
+    Renovou o contrato sem hesitação.
+  </p>
+
+  <p>
+    O erro veio depois.
+  </p>
+
+  <p>
+    As metas começaram a crescer <strong>exponencialmente</strong>.
+    O que antes eram tarefas pontuais tornou-se um ciclo interminável de demandas,
+    prazos e cobranças.
+  </p>
+
+  <p>
+    Bel, sempre jocoso e irônico, tratava tudo como entretenimento.
+    Ainda assim, o personagem era competente.
+    Cumpria metas, conquistava folgas ocasionais, até mesmo “férias”,
+    como se fosse um funcionário exemplar no inferno.
+  </p>
+
+  <p>
+    Mas, aos poucos, percebeu a verdade:
+  </p>
+
+  <p><strong>
+    Não havia correntes visíveis, mas era um escravo do trabalho.
+  </strong></p>
+
+  <p>
+    Apesar disso, sua bússola moral nunca se perdeu.
+    Ele é uma pessoa justa, com profunda empatia por quem luta para sobreviver —
+    trabalhadores, marginalizados, gente explorada como ele foi.
+  </p>
+
+  <p>
+    Em contrapartida, desenvolveu aversão profunda à política,
+    à burocracia e às autoridades,
+    pois foram exatamente essas estruturas que o aprisionaram
+    sob contratos, metas e hierarquias infernais.
+  </p>
+
+</section>
+
   </div>
 </section>
 
