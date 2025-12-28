@@ -441,6 +441,7 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
   .scores-col { flex-direction: row; justify-content: space-around; grid-column: 1 / -1; }
 }
 
+
 @media (max-width: 768px) {
   .header-top { flex-direction: column; align-items: center; text-align: center; }
   .char-identity { align-items: center; }
@@ -474,6 +475,38 @@ h2 { border-bottom: 2px solid var(--phb-red); font-size: 18px; margin-bottom: 10
   .items-columns { column-count: 1; }
   .bg-text { column-count: 1; }
   .sheet-page { padding: 15px; width: 100%; margin: 0; box-shadow: none; }
+}
+
+  .resource-inputs {
+    flex-wrap: wrap; /* Permite que os campos pulem de linha se não couberem */
+    gap: 2px;
+  }
+
+  .resource-inputs input {
+    width: 40px; /* Reduz um pouco a largura dos inputs */
+    font-size: 14px; /* Diminui a fonte para economizar espaço */
+    padding: 3px;
+  }
+
+  .resource-divider {
+    font-size: 16px;
+  }
+
+  /* Ajuste para o campo específico de Hit Dice que é maior */
+  .resource-item input[title="Total"] {
+    width: 65px !important; 
+    font-size: 12px !important;
+  }
+
+  /* Garante que os boxes de slots de magia não fiquem espremidos */
+  .spell-slots-grid {
+    grid-template-columns: repeat(4, 1fr); /* Força 2 colunas em vez de tentar esticar */
+  }
+
+  @media (max-width: 540px) {
+ .spell-slots-grid {
+    grid-template-columns: repeat(3, 1fr); /* Força 2 colunas em vez de tentar esticar */
+  }
 }
 </style>
 </head>
